@@ -15,7 +15,7 @@ function ColorTheme() {
         />
       </svg>
       <input className="theme__checkbox" type="checkbox" id="theme-toggle" />
-      <label className="theme__slider-container" for="theme-toggle">
+      <label className="theme__slider-container" htmlFor="theme-toggle">
         <span className="theme__slider"></span>
       </label>
       <svg
