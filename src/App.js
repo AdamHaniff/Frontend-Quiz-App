@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <StartMenu />
-      {/* <Question /> */}
+      {/* <StartMenu /> */}
+      <Question />
       {/* <Completed /> */}
     </div>
   );

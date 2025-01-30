@@ -15,7 +15,7 @@ function StartMenu() {
       </div>
       <div className="start-menu__subjects">
         {data.quizzes.map((quiz) => (
-          <div className="subject-container" key={quiz.title}>
+          <div className="subject__container" key={quiz.title}>
             <Subject quizObj={quiz} />
           </div>
         ))}

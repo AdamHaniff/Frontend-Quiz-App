@@ -12,10 +12,15 @@ $color-titan-white: #ebf0ff;
 $color-blue-chalk: #f6e7ff;
 $color-tealish-green: #26d782;
 $color-valentine-red: #ee5454;
+$color-cloudy-blue: #abc1e1;
+$color-river-bed: #3b4d66;
 
 // ********** FONT-FAMILY **********
+$font-rubik: "Rubik", serif;
 
 // ********* FONT-WEIGHTS *********
+$fw-light: 300;
+$fw-medium: 500;
 
 // ************* BASE *************
 *,
@@ -32,11 +37,149 @@ html {
 }
 
 body {
-  // background:
-  // font-family:
+  background: $color-white-smoke;
+  font-family: $font-rubik;
 }
 
 html,
 body {
   height: 100%;
 }
+
+// ********* 375px LAYOUT *********
+body {
+  padding: 1.6rem 2.4rem 0;
+  background-image: url(../../public/images/pattern-background-mobile-light.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// ************** APP **************
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+// ************ HEADER ************
+.header {
+  margin-bottom: 1.6rem;
+
+  &__subject-theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+// ************ SUBJECT ************
+.subject {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  &__icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.6rem;
+    background: $color-blue-chalk;
+  }
+
+  &__icon {
+    width: 2.8571rem;
+    height: 2.8571rem;
+  }
+
+  &__name {
+    color: $color-pickled-bluewood;
+    font-size: 1.8rem;
+    font-weight: $fw-medium;
+  }
+
+  &__container {
+    width: 100%;
+    background: $color-white;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
+  }
+}
+
+// ************ THEME *************
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__slider-container {
+    width: 3.2rem;
+    height: 2rem;
+    background: $color-electric-purple;
+    border-radius: 99.9rem;
+    position: relative;
+  }
+
+  &__slider {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: $color-white;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+  }
+}
+
+// ********** START-MENU **********
+.start-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__subjects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+// *********** GREETING ***********
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: $color-pickled-bluewood;
+    font-size: 4rem;
+    font-weight: $fw-light;
+
+    &--medium-bold {
+      font-weight: $fw-medium;
+    }
+  }
+
+  &__instruction {
+    color: $color-jet-grey;
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 2.1rem;
+  }
+}
+
+// ************ QUESTION ***********
