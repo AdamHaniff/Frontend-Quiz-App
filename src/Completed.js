@@ -1,4 +1,5 @@
 import Subject from "./Subject";
+import Button from "./Button";
 
 // DELETE LATER
 const quizObj = {
@@ -104,7 +105,7 @@ function Completed() {
     <div className="completed">
       <h2 className="completed__header">
         Quiz completed{" "}
-        <span className="completed__text--medium-bold">You scored...</span>
+        <span className="completed__header--medium-bold">You scored...</span>
       </h2>
       <div className="completed__card-btn">
         <div className="completed__card">
@@ -112,9 +113,7 @@ function Completed() {
           <span className="completed__score">8</span>
           <span className="completed__questions">out of 10</span>
         </div>
-        <button className="completed__btn" type="button">
-          Play Again
-        </button>
+        <Button>Play Again</Button>
       </div>
     </div>
   );

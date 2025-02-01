@@ -1,4 +1,5 @@
 import Option from "./Option";
+import Button from "./Button";
 
 function Question() {
   return (
@@ -24,7 +25,7 @@ function Question() {
           <Option />
           <Option />
         </div>
-        <button className="question__submit">Submit Answer</button>
+        <Button>Submit Answer</Button>
         <div className="question__error-icon-text">
           <svg
             className="question__error-icon"

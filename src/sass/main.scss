@@ -46,6 +46,37 @@ body {
   height: 100%;
 }
 
+// ************ MIXINS ************
+@mixin subject-option-styles {
+  width: 100%;
+  background: $color-white;
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
+}
+
+@mixin italic-text-styles {
+  color: $color-jet-grey;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 2.1rem;
+}
+
+@mixin icon-letter-styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.6rem;
+}
+
+@mixin correct-error-styles {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
 // ********* 375px LAYOUT *********
 body {
   padding: 1.6rem 2.4rem 0;
@@ -79,12 +110,7 @@ body {
   gap: 1.6rem;
 
   &__icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0.6rem;
+    @include icon-letter-styles;
     background: $color-blue-chalk;
   }
 
@@ -100,11 +126,7 @@ body {
   }
 
   &__container {
-    width: 100%;
-    background: $color-white;
-    padding: 1.2rem;
-    border-radius: 1.2rem;
-    box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
+    @include subject-option-styles;
   }
 }
 
@@ -175,10 +197,7 @@ body {
   }
 
   &__instruction {
-    color: $color-jet-grey;
-    font-size: 1.4rem;
-    font-style: italic;
-    line-height: 2.1rem;
+    @include italic-text-styles;
   }
 }
 
@@ -190,10 +209,7 @@ body {
 
   &__number {
     display: inline-block;
-    color: $color-jet-grey;
-    font-size: 1.4rem;
-    font-style: italic;
-    line-height: 2.1rem;
+    @include italic-text-styles;
     margin-bottom: 1.2rem;
   }
 
@@ -242,7 +258,7 @@ body {
     gap: 1.2rem;
   }
 
-  &__submit {
+  &-completed-btn {
     height: 5.6rem;
     padding: 1.2rem;
     border-radius: 1.2rem;
@@ -264,9 +280,7 @@ body {
   }
 
   &__error-icon {
-    display: block;
-    width: 3.2rem;
-    height: 3.2rem;
+    @include correct-error-styles;
   }
 
   &__error-text {
@@ -277,11 +291,7 @@ body {
 
 // ************ OPTION ************
 .option {
-  width: 100%;
-  background: $color-white;
-  padding: 1.2rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
+  @include subject-option-styles;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -293,16 +303,11 @@ body {
   }
 
   &__letter {
-    width: 4rem;
-    height: 4rem;
+    @include icon-letter-styles;
     background: $color-white-smoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: $color-jet-grey;
     font-size: 1.8rem;
     font-weight: $fw-medium;
-    border-radius: 0.6rem;
   }
 
   &__text {
@@ -312,12 +317,54 @@ body {
   }
 
   &__correct-error {
-    display: block;
-    width: 3.2rem;
-    height: 3.2rem;
+    @include correct-error-styles;
   }
 }
 
 // *********** COMPLETED ***********
 .completed {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: $color-pickled-bluewood;
+    font-size: 4rem;
+    font-weight: $fw-light;
+
+    &--medium-bold {
+      font-weight: $fw-medium;
+    }
+  }
+
+  &__card-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    border-radius: 1.2rem;
+    background: $color-white;
+    box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+    padding: 3.2rem;
+    align-items: center;
+  }
+
+  &__score {
+    color: $color-pickled-bluewood;
+    font-size: 8.8rem;
+    font-weight: $fw-medium;
+  }
+
+  &__questions {
+    color: $color-jet-grey;
+    font-size: 1.8rem;
+  }
 }
