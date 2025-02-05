@@ -40,7 +40,6 @@ body {
 .header__subject-theme {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .subject {
@@ -78,6 +77,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  margin-left: auto;
 }
 .theme__icon {
   width: 1.6rem;

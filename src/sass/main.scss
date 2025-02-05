@@ -99,7 +99,6 @@ body {
   &__subject-theme {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 }
 
@@ -135,6 +134,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  margin-left: auto;
 
   &__icon {
     width: 1.6rem;

@@ -1,7 +1,7 @@
 import Option from "./Option";
 import Button from "./Button";
 
-function Question() {
+function Question({ dispatch, subjectObj, index }) {
   return (
     <div className="question">
       <div className="question__number-text-progress">

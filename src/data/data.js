@@ -3,6 +3,7 @@ const data = {
     {
       title: "HTML",
       icon: "images/icon-html.svg",
+      bgColor: "#fff1e9",
       questions: [
         {
           question: "What does HTML stand for?",
@@ -88,6 +89,7 @@ const data = {
     {
       title: "CSS",
       icon: "images/icon-css.svg",
+      bgColor: "#E0FDEF",
       questions: [
         {
           question: "What does CSS stand for?",
@@ -167,6 +169,7 @@ const data = {
     {
       title: "JavaScript",
       icon: "images/icon-js.svg",
+      bgColor: "#EBF0FF",
       questions: [
         {
           question:
@@ -266,6 +269,7 @@ const data = {
     {
       title: "Accessibility",
       icon: "images/icon-accessibility.svg",
+      bgColor: "#F6E7FF",
       questions: [
         {
           question: "What does 'WCAG' stand for?",

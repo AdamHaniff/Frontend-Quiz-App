@@ -100,11 +100,11 @@ const quizObj = {
   ],
 };
 
-function Header() {
+function Header({ status }) {
   return (
     <header className="header">
       <div className="header__subject-theme">
-        <Subject quizObj={quizObj} />
+        {status !== "ready" && <Subject quizObj={quizObj} />}
         <ColorTheme />
       </div>
     </header>

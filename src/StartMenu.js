@@ -1,7 +1,7 @@
 import data from "./data/data";
 import Subject from "./Subject";
 
-function StartMenu() {
+function StartMenu({ dispatch }) {
   return (
     <div className="start-menu">
       <div className="greeting">
@@ -15,7 +15,11 @@ function StartMenu() {
       </div>
       <div className="start-menu__subjects">
         {data.quizzes.map((quiz) => (
-          <div className="subject__container" key={quiz.title}>
+          <div
+            className="subject__container"
+            key={quiz.title}
+            onClick={() => dispatch({ type: "quizStarted", payload: quiz })}
+          >
             <Subject quizObj={quiz} />
           </div>
         ))}
