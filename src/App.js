@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header status={status} />
+      <Header status={status} subjectObj={subject} />
       {status === "ready" && <StartMenu dispatch={dispatch} />}
       {status === "active" && (
         <Question dispatch={dispatch} subjectObj={subject} index={index} />

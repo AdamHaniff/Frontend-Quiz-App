@@ -1,6 +1,6 @@
-function Subject({ quizObj }) {
+function Subject({ subjectObj = {} }) {
   // VARIABLES
-  const { title, icon, bgColor } = quizObj;
+  const { title, icon, bgColor } = subjectObj;
 
   return (
     <div className="subject">

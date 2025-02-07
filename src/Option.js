@@ -1,4 +1,4 @@
-function Option() {
+function Option(option, index) {
   return (
     <div className="option">
       <div className="option__letter-text">

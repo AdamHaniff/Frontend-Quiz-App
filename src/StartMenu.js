@@ -20,7 +20,7 @@ function StartMenu({ dispatch }) {
             key={quiz.title}
             onClick={() => dispatch({ type: "quizStarted", payload: quiz })}
           >
-            <Subject quizObj={quiz} />
+            <Subject subjectObj={quiz} />
           </div>
         ))}
       </div>

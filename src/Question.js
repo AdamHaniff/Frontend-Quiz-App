@@ -2,28 +2,32 @@ import Option from "./Option";
 import Button from "./Button";
 
 function Question({ dispatch, subjectObj, index }) {
+  const { questions } = subjectObj;
+  const question = questions[index].question;
+  const questionNumber = index + 1;
+  const numberOfQuestions = questions.length;
+  const options = questions[index].options;
+
   return (
     <div className="question">
       <div className="question__number-text-progress">
-        <span className="question__number">Question 6 of 10</span>
-        <p className="question__text">
-          Which of these color contrast ratios defines the minimum WCAG 2.1
-          Level AA requirement for normal text?
-        </p>
+        <span className="question__number">
+          Question {questionNumber} of {numberOfQuestions}
+        </span>
+        <p className="question__text">{question}</p>
         <div className="question__progress-container">
           <progress
             className="question__progress"
-            value="6"
-            max="10"
+            value={questionNumber}
+            max={numberOfQuestions}
           ></progress>
         </div>
       </div>
       <div className="question__options-submit-error">
         <div className="question__options">
-          <Option />
-          <Option />
-          <Option />
-          <Option />
+          {options.map((option, index) => (
+            <Option key={index} option={option} index={index} />
+          ))}
         </div>
         <Button>Submit Answer</Button>
         <div className="question__error-icon-text">
