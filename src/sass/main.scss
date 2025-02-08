@@ -295,6 +295,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 0.3rem solid transparent;
+  transition: border 0.3s;
 
   &__letter-text {
     display: flex;
@@ -308,6 +310,8 @@ body {
     color: $color-jet-grey;
     font-size: 1.8rem;
     font-weight: $fw-medium;
+    flex-shrink: 0;
+    transition: all 0.3s;
   }
 
   &__text {
@@ -367,4 +371,33 @@ body {
     color: $color-jet-grey;
     font-size: 1.8rem;
   }
+}
+
+// ******** DYNAMIC-STYLES ********
+.purple-border {
+  border: 0.3rem solid $color-electric-purple;
+}
+
+.purple-background {
+  background: $color-electric-purple;
+}
+
+.white-color {
+  color: $color-white;
+}
+
+.green-border {
+  border: 0.3rem solid $color-tealish-green;
+}
+
+.green-background {
+  background: $color-tealish-green;
+}
+
+.red-border {
+  border: 0.3rem solid $color-valentine-red;
+}
+
+.red-background {
+  background: $color-valentine-red;
 }

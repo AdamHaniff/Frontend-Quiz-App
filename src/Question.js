@@ -1,12 +1,29 @@
 import Option from "./Option";
 import Button from "./Button";
+import { useState } from "react";
 
 function Question({ dispatch, subjectObj, index }) {
+  // STATE
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // VARIABLES
   const { questions } = subjectObj;
   const question = questions[index].question;
   const questionNumber = index + 1;
   const numberOfQuestions = questions.length;
   const options = questions[index].options;
+  const answer = questions[index].answer;
+
+  // HANDLER FUNCTIONS
+  function handleOptionSelect(i) {
+    setSelectedIndex((prevIndex) => (prevIndex === i ? null : i));
+  }
+
+  function handleSubmitAnswer() {
+    setIsSubmitted(true);
+    dispatch({ type: "answerSubmitted", payload: options[selectedIndex] });
+  }
 
   return (
     <div className="question">
@@ -26,11 +43,21 @@ function Question({ dispatch, subjectObj, index }) {
       <div className="question__options-submit-error">
         <div className="question__options">
           {options.map((option, index) => (
-            <Option key={index} option={option} index={index} />
+            <Option
+              key={index}
+              option={option}
+              index={index}
+              isSelected={selectedIndex === index}
+              onSelect={() => handleOptionSelect(index)}
+              isCorrect={isSubmitted && option === answer}
+              isIncorrect={
+                isSubmitted && selectedIndex === index && option !== answer
+              }
+            />
           ))}
         </div>
-        <Button>Submit Answer</Button>
-        <div className="question__error-icon-text">
+        <Button onClick={handleSubmitAnswer}>Submit Answer</Button>
+        {/* <div className="question__error-icon-text">
           <svg
             className="question__error-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +72,7 @@ function Question({ dispatch, subjectObj, index }) {
             />
           </svg>
           <span className="question__error-text">Please select an answer</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

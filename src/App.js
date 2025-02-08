@@ -18,6 +18,14 @@ function reducer(state, action) {
     case "quizStarted":
       return { ...state, status: "active", subject: action.payload };
 
+    case "answerSubmitted":
+      const answer = state.subject.questions[state.index].answer;
+      return {
+        ...state,
+        userAnswer: action.payload,
+        score: action.payload === answer ? state.score + 1 : state.score,
+      };
+
     default:
       throw new Error("Action unknown");
   }

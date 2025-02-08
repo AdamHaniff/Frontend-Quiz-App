@@ -226,6 +226,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 0.3rem solid transparent;
+  transition: border 0.3s;
 }
 .option__letter-text {
   display: flex;
@@ -243,6 +245,8 @@ body {
   color: #626c7f;
   font-size: 1.8rem;
   font-weight: 500;
+  flex-shrink: 0;
+  transition: all 0.3s;
 }
 .option__text {
   color: #313e51;
@@ -294,4 +298,32 @@ body {
 .completed__questions {
   color: #626c7f;
   font-size: 1.8rem;
+}
+
+.purple-border {
+  border: 0.3rem solid #a729f5;
+}
+
+.purple-background {
+  background: #a729f5;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.green-border {
+  border: 0.3rem solid #26d782;
+}
+
+.green-background {
+  background: #26d782;
+}
+
+.red-border {
+  border: 0.3rem solid #ee5454;
+}
+
+.red-background {
+  background: #ee5454;
 }/*# sourceMappingURL=main.css.map */
