@@ -26,6 +26,13 @@ function reducer(state, action) {
         score: action.payload === answer ? state.score + 1 : state.score,
       };
 
+    case "nextQuestion":
+      return {
+        ...state,
+        index: state.index + 1,
+        userAnswer: null,
+      };
+
     default:
       throw new Error("Action unknown");
   }

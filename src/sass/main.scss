@@ -401,3 +401,8 @@ body {
 .red-background {
   background: $color-valentine-red;
 }
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}

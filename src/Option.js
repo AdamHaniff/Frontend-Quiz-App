@@ -5,6 +5,8 @@ function Option({
   onSelect,
   isCorrect,
   isIncorrect,
+  showCorrect,
+  disabled,
 }) {
   // VARIABLES
   const letters = ["A", "B", "C", "D"];
@@ -13,7 +15,7 @@ function Option({
     <div
       className={`option ${isSelected ? "purple-border" : ""} ${
         isCorrect ? "green-border" : ""
-      } ${isIncorrect ? "red-border" : ""}`}
+      } ${isIncorrect ? "red-border" : ""} ${disabled ? "disabled" : ""}`}
       onClick={onSelect}
     >
       <div className="option__letter-text">
@@ -28,7 +30,7 @@ function Option({
         </div>
         <span className="option__text">{option}</span>
       </div>
-      {isCorrect && (
+      {(isCorrect || showCorrect) && (
         <svg
           className="option__correct-error"
           xmlns="http://www.w3.org/2000/svg"

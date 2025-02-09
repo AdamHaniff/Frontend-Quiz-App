@@ -326,4 +326,9 @@ body {
 
 .red-background {
   background: #ee5454;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
 }/*# sourceMappingURL=main.css.map */
