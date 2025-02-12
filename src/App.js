@@ -33,6 +33,16 @@ function reducer(state, action) {
         userAnswer: null,
       };
 
+    case "quizCompleted":
+      return {
+        ...state,
+        status: "completed",
+        userAnswer: null,
+      };
+
+    case "playAgain":
+      return initialState;
+
     default:
       throw new Error("Action unknown");
   }
@@ -52,7 +62,9 @@ function App() {
       {status === "active" && (
         <Question dispatch={dispatch} subjectObj={subject} index={index} />
       )}
-      {/* <Completed /> */}
+      {status === "completed" && (
+        <Completed subjectObj={subject} score={score} dispatch={dispatch} />
+      )}
     </div>
   );
 }

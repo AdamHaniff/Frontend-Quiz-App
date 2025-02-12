@@ -15,6 +15,7 @@ function Question({ dispatch, subjectObj, index }) {
   const numberOfQuestions = questions.length;
   const options = questions[index].options;
   const answer = questions[index].answer;
+  const onLastQuestion = questionNumber === numberOfQuestions;
 
   // HANDLER FUNCTIONS
   function handleOptionSelect(i) {
@@ -26,7 +27,7 @@ function Question({ dispatch, subjectObj, index }) {
 
   function handleSubmitAnswer() {
     // Display error and don't submit if user hasn't selected an answer
-    if (!selectedIndex) {
+    if (selectedIndex === null) {
       setIsErrorDisplayed(true);
       return;
     }
@@ -41,6 +42,14 @@ function Question({ dispatch, subjectObj, index }) {
     setIsSubmitted(false);
 
     dispatch({ type: "nextQuestion" });
+  }
+
+  function handleViewScore() {
+    // Reset 'selectedIndex' and 'isSubmitted'
+    setSelectedIndex(null);
+    setIsSubmitted(false);
+
+    dispatch({ type: "quizCompleted" });
   }
 
   return (
@@ -79,9 +88,19 @@ function Question({ dispatch, subjectObj, index }) {
           ))}
         </div>
         <Button
-          onClick={!isSubmitted ? handleSubmitAnswer : handleNextQuestion}
+          onClick={
+            onLastQuestion && isSubmitted
+              ? handleViewScore
+              : !isSubmitted
+              ? handleSubmitAnswer
+              : handleNextQuestion
+          }
         >
-          {!isSubmitted ? "Submit Answer" : "Next Question"}
+          {onLastQuestion && isSubmitted
+            ? "View Score"
+            : !isSubmitted
+            ? "Submit Answer"
+            : "Next Question"}
         </Button>
         {isErrorDisplayed && (
           <div className="question__error-icon-text">
