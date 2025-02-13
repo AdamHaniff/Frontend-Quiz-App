@@ -14,6 +14,7 @@ html {
 body {
   background: #f4f6fa;
   font-family: "Rubik", serif;
+  transition: all 0.3s;
 }
 
 html,
@@ -64,6 +65,7 @@ body {
   color: #313e51;
   font-size: 1.8rem;
   font-weight: 500;
+  transition: all 0.3s;
 }
 .subject__container {
   width: 100%;
@@ -71,6 +73,7 @@ body {
   padding: 1.2rem;
   border-radius: 1.2rem;
   box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
+  transition: all 0.3s;
 }
 
 .theme {
@@ -82,6 +85,9 @@ body {
 .theme__icon {
   width: 1.6rem;
   height: 1.6rem;
+}
+.theme__icon path {
+  transition: all 0.3s;
 }
 .theme__checkbox {
   display: none;
@@ -101,6 +107,7 @@ body {
   position: absolute;
   top: 0.4rem;
   left: 0.4rem;
+  transition: transform 0.3s;
 }
 
 .start-menu {
@@ -126,6 +133,7 @@ body {
   color: #313e51;
   font-size: 4rem;
   font-weight: 300;
+  transition: all 0.3s;
 }
 .greeting__text--medium-bold {
   font-weight: 500;
@@ -135,6 +143,7 @@ body {
   font-size: 1.4rem;
   font-style: italic;
   line-height: 2.1rem;
+  transition: all 0.3s;
 }
 
 .question {
@@ -331,4 +340,24 @@ body {
 .disabled {
   pointer-events: none;
   cursor: not-allowed;
+}
+
+.translate-12px {
+  transform: translateX(1.2rem);
+}
+
+.pickled-bluewood-bg {
+  background: #313e51;
+}
+
+.cloudy-blue-color {
+  color: #abc1e1;
+}
+
+.river-bed-bg {
+  background: #3b4d66;
+}
+
+.box-shadow-dark {
+  box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
 }/*# sourceMappingURL=main.css.map */

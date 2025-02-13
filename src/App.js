@@ -2,7 +2,7 @@ import Header from "./Header";
 import StartMenu from "./StartMenu";
 import Question from "./Question";
 import Completed from "./Completed";
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
 const initialState = {
   status: "ready",
@@ -43,6 +43,9 @@ function reducer(state, action) {
     case "playAgain":
       return initialState;
 
+    case "changeColorTheme":
+      return { ...state, isLightTheme: !state.isLightTheme };
+
     default:
       throw new Error("Action unknown");
   }
@@ -50,15 +53,25 @@ function reducer(state, action) {
 
 function App() {
   // STATE
-  const [
-    { status, subject, index, score, userAnswer, isLightTheme },
-    dispatch,
-  ] = useReducer(reducer, initialState);
+  const [{ status, subject, index, score, isLightTheme }, dispatch] =
+    useReducer(reducer, initialState);
+
+  // EFFECTS
+  useEffect(() => {
+    document.body.classList.toggle("pickled-bluewood-bg", !isLightTheme);
+  }, [isLightTheme]);
 
   return (
     <div className="app">
-      <Header status={status} subjectObj={subject} />
-      {status === "ready" && <StartMenu dispatch={dispatch} />}
+      <Header
+        status={status}
+        subjectObj={subject}
+        dispatch={dispatch}
+        isLightTheme={isLightTheme}
+      />
+      {status === "ready" && (
+        <StartMenu dispatch={dispatch} isLightTheme={isLightTheme} />
+      )}
       {status === "active" && (
         <Question dispatch={dispatch} subjectObj={subject} index={index} />
       )}
