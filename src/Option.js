@@ -7,6 +7,7 @@ function Option({
   isIncorrect,
   showCorrect,
   disabled,
+  isLightTheme,
 }) {
   // VARIABLES
   const letters = ["A", "B", "C", "D"];
@@ -15,7 +16,9 @@ function Option({
     <div
       className={`option ${isSelected ? "purple-border" : ""} ${
         isCorrect ? "green-border" : ""
-      } ${isIncorrect ? "red-border" : ""} ${disabled ? "disabled" : ""}`}
+      } ${isIncorrect ? "red-border" : ""} ${disabled ? "disabled" : ""} ${
+        !isLightTheme ? "river-bed-bg box-shadow-dark" : ""
+      }`}
       onClick={onSelect}
     >
       <div className="option__letter-text">
@@ -28,7 +31,9 @@ function Option({
         >
           {letters[index]}
         </div>
-        <span className="option__text">{option}</span>
+        <span className={`option__text ${!isLightTheme ? "white-color" : ""}`}>
+          {option}
+        </span>
       </div>
       {(isCorrect || showCorrect) && (
         <svg

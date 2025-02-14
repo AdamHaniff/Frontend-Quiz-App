@@ -1,6 +1,12 @@
-function Button({ children, onClick }) {
+function Button({ children, onClick, isLightTheme }) {
   return (
-    <button className="question-completed-btn" type="button" onClick={onClick}>
+    <button
+      className={`question-completed-btn ${
+        !isLightTheme ? "box-shadow-dark" : ""
+      }`}
+      type="button"
+      onClick={onClick}
+    >
       {children}
     </button>
   );

@@ -58,7 +58,11 @@ function App() {
 
   // EFFECTS
   useEffect(() => {
+    // Change the background color
     document.body.classList.toggle("pickled-bluewood-bg", !isLightTheme);
+
+    // Change the pattern background
+    document.body.classList.toggle("dark-pattern-bg", !isLightTheme);
   }, [isLightTheme]);
 
   return (
@@ -73,10 +77,20 @@ function App() {
         <StartMenu dispatch={dispatch} isLightTheme={isLightTheme} />
       )}
       {status === "active" && (
-        <Question dispatch={dispatch} subjectObj={subject} index={index} />
+        <Question
+          dispatch={dispatch}
+          subjectObj={subject}
+          index={index}
+          isLightTheme={isLightTheme}
+        />
       )}
       {status === "completed" && (
-        <Completed subjectObj={subject} score={score} dispatch={dispatch} />
+        <Completed
+          subjectObj={subject}
+          score={score}
+          dispatch={dispatch}
+          isLightTheme={isLightTheme}
+        />
       )}
     </div>
   );

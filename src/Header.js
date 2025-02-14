@@ -5,7 +5,9 @@ function Header({ status, subjectObj, dispatch, isLightTheme }) {
   return (
     <header className="header">
       <div className="header__subject-theme">
-        {status !== "ready" && <Subject subjectObj={subjectObj} />}
+        {status !== "ready" && (
+          <Subject subjectObj={subjectObj} isLightTheme={isLightTheme} />
+        )}
         <ColorTheme dispatch={dispatch} isLightTheme={isLightTheme} />
       </div>
     </header>

@@ -221,6 +221,7 @@ body {
     display: inline-block;
     @include italic-text-styles;
     margin-bottom: 1.2rem;
+    transition: all 0.3s;
   }
 
   &__text {
@@ -229,6 +230,7 @@ body {
     font-weight: $fw-medium;
     line-height: 2.4rem;
     margin-bottom: 2.4rem;
+    transition: all 0.3s;
   }
 
   &__progress-container {
@@ -239,6 +241,7 @@ body {
     background: $color-white;
     display: flex;
     align-items: center;
+    transition: all 0.3s;
   }
 
   &__progress {
@@ -279,6 +282,7 @@ body {
     font-family: $font-rubik;
     font-size: 1.8rem;
     font-weight: $fw-medium;
+    transition: all 0.3s;
   }
 
   &__error-icon-text {
@@ -296,6 +300,7 @@ body {
   &__error-text {
     color: $color-valentine-red;
     font-size: 1.8rem;
+    transition: all 0.3s;
   }
 }
 
@@ -306,7 +311,7 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 0.3rem solid transparent;
-  transition: border 0.3s;
+  transition: all 0.3s;
 
   &__letter-text {
     display: flex;
@@ -328,10 +333,13 @@ body {
     color: $color-pickled-bluewood;
     font-size: 1.8rem;
     font-weight: $fw-medium;
+    transition: all 0.3s;
   }
 
   &__correct-error {
     @include correct-error-styles;
+    flex-shrink: 0;
+    margin-left: 1.2rem;
   }
 }
 
@@ -348,6 +356,7 @@ body {
     color: $color-pickled-bluewood;
     font-size: 4rem;
     font-weight: $fw-light;
+    transition: all 0.3s;
 
     &--medium-bold {
       font-weight: $fw-medium;
@@ -369,12 +378,14 @@ body {
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
     padding: 3.2rem;
     align-items: center;
+    transition: all 0.3s;
   }
 
   &__score {
     color: $color-pickled-bluewood;
     font-size: 8.8rem;
     font-weight: $fw-medium;
+    transition: all 0.3s;
   }
 
   &__questions {
@@ -435,4 +446,8 @@ body {
 
 .box-shadow-dark {
   box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
+}
+
+.dark-pattern-bg {
+  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
 }

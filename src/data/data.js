@@ -310,8 +310,8 @@ const data = {
         {
           question:
             "Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?",
-          options: ["3:1", "4.5:1", "7:1", "2:1"],
-          answer: "4.5:1",
+          options: ["3 : 1", "4.5 : 1", "7 : 1", "2 : 1"],
+          answer: "4.5 : 1",
         },
         {
           question:
