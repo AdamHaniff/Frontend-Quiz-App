@@ -1,10 +1,13 @@
 import Subject from "./Subject";
 import Button from "./Button";
+import { useContext } from "react";
+import { ThemeContext } from "./App";
 
-function Completed({ subjectObj, score, dispatch, isLightTheme }) {
+function Completed({ subjectObj, score, dispatch }) {
   // VARIABLES
   const { questions } = subjectObj;
   const numberOfQuestions = questions.length;
+  const { isLightTheme } = useContext(ThemeContext);
 
   // HANDLER FUNCTIONS
   function handlePlayAgain() {
@@ -23,7 +26,7 @@ function Completed({ subjectObj, score, dispatch, isLightTheme }) {
             !isLightTheme ? "river-bed-bg box-shadow-dark" : ""
           }`}
         >
-          <Subject subjectObj={subjectObj} isLightTheme={isLightTheme} />
+          <Subject subjectObj={subjectObj} />
           <span
             className={`completed__score ${!isLightTheme ? "white-color" : ""}`}
           >

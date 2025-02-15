@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import data from "./data/data";
 import Subject from "./Subject";
+import { ThemeContext } from "./App";
 
-function StartMenu({ dispatch, isLightTheme }) {
+function StartMenu({ dispatch }) {
+  // VARIABLES
+  const { isLightTheme } = useContext(ThemeContext);
+
   return (
     <div className="start-menu">
       <div className="greeting">
@@ -26,7 +31,7 @@ function StartMenu({ dispatch, isLightTheme }) {
             key={quiz.title}
             onClick={() => dispatch({ type: "quizStarted", payload: quiz })}
           >
-            <Subject subjectObj={quiz} isLightTheme={isLightTheme} />
+            <Subject subjectObj={quiz} />
           </div>
         ))}
       </div>

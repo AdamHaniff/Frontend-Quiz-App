@@ -13,4 +13,6 @@ Users should be able to:
 • View the optimal layout for the interface depending on their device's screen size  
 • See hover and focus states for all interactive elements on the page  
 • Navigate the entire app only using their keyboard  
-• Change the app's theme between light and dark
+• Change the app's theme between light and dark  
+• See their preferred color theme on first load based on their system preferences  
+• Have their preferred color theme persist even after reloading the page

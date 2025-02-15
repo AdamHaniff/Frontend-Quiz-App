@@ -1,4 +1,10 @@
-function ColorTheme({ dispatch, isLightTheme }) {
+import { useContext } from "react";
+import { ThemeContext } from "./App";
+
+function ColorTheme({ dispatch }) {
+  // VARIABLES
+  const { isLightTheme } = useContext(ThemeContext);
+
   // HANDLER FUNCTIONS
   function handleSliderClick() {
     dispatch({ type: "changeColorTheme" });

@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ThemeContext } from "./App";
+
 function Option({
   option,
   index,
@@ -7,10 +10,10 @@ function Option({
   isIncorrect,
   showCorrect,
   disabled,
-  isLightTheme,
 }) {
   // VARIABLES
   const letters = ["A", "B", "C", "D"];
+  const { isLightTheme } = useContext(ThemeContext);
 
   return (
     <div

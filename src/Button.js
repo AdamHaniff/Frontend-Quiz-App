@@ -1,4 +1,10 @@
-function Button({ children, onClick, isLightTheme }) {
+import { useContext } from "react";
+import { ThemeContext } from "./App";
+
+function Button({ children, onClick }) {
+  // VARIABLES
+  const { isLightTheme } = useContext(ThemeContext);
+
   return (
     <button
       className={`question-completed-btn ${

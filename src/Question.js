@@ -1,8 +1,9 @@
 import Option from "./Option";
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./App";
 
-function Question({ dispatch, subjectObj, index, isLightTheme }) {
+function Question({ dispatch, subjectObj, index }) {
   // STATE
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -16,6 +17,7 @@ function Question({ dispatch, subjectObj, index, isLightTheme }) {
   const options = questions[index].options;
   const answer = questions[index].answer;
   const onLastQuestion = questionNumber === numberOfQuestions;
+  const { isLightTheme } = useContext(ThemeContext);
 
   // HANDLER FUNCTIONS
   function handleOptionSelect(i) {
@@ -94,7 +96,6 @@ function Question({ dispatch, subjectObj, index, isLightTheme }) {
               }
               showCorrect={isSubmitted && option === answer}
               disabled={isSubmitted}
-              isLightTheme={isLightTheme}
             />
           ))}
         </div>
@@ -106,7 +107,6 @@ function Question({ dispatch, subjectObj, index, isLightTheme }) {
               ? handleSubmitAnswer
               : handleNextQuestion
           }
-          isLightTheme={isLightTheme}
         >
           {onLastQuestion && isSubmitted
             ? "View Score"

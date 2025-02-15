@@ -1,6 +1,10 @@
-function Subject({ subjectObj = {}, isLightTheme }) {
+import { useContext } from "react";
+import { ThemeContext } from "./App";
+
+function Subject({ subjectObj = {} }) {
   // VARIABLES
   const { title, icon, bgColor } = subjectObj;
+  const { isLightTheme } = useContext(ThemeContext);
 
   return (
     <div className="subject">
