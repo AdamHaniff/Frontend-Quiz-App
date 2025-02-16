@@ -128,7 +128,11 @@ body {
 
   &__container {
     @include subject-option-styles;
-    transition: all 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-electric-purple;
+    }
   }
 }
 
@@ -158,6 +162,11 @@ body {
     background: $color-electric-purple;
     border-radius: 99.9rem;
     position: relative;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-pickled-bluewood;
+      outline-offset: -0.1rem;
+    }
   }
 
   &__slider {
@@ -282,7 +291,12 @@ body {
     font-family: $font-rubik;
     font-size: 1.8rem;
     font-weight: $fw-medium;
-    transition: all 0.3s;
+    transition: box-shadow 0.3s;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-pickled-bluewood;
+      outline-offset: -0.1rem;
+    }
   }
 
   &__error-icon-text {
@@ -311,7 +325,11 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 0.3rem solid transparent;
-  transition: all 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  &:focus-visible {
+    outline: 0.2rem solid $color-electric-purple;
+  }
 
   &__letter-text {
     display: flex;

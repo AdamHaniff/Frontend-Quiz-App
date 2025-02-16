@@ -73,7 +73,10 @@ body {
   padding: 1.2rem;
   border-radius: 1.2rem;
   box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
-  transition: all 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.subject__container:focus-visible {
+  outline: 0.2rem solid #a729f5;
 }
 
 .theme {
@@ -98,6 +101,10 @@ body {
   background: #a729f5;
   border-radius: 99.9rem;
   position: relative;
+}
+.theme__slider-container:focus-visible {
+  outline: 0.2rem solid #313e51;
+  outline-offset: -0.1rem;
 }
 .theme__slider {
   width: 1.2rem;
@@ -211,7 +218,11 @@ body {
   font-family: "Rubik", serif;
   font-size: 1.8rem;
   font-weight: 500;
-  transition: all 0.3s;
+  transition: box-shadow 0.3s;
+}
+.question-completed-btn:focus-visible {
+  outline: 0.2rem solid #313e51;
+  outline-offset: -0.1rem;
 }
 .question__error-icon-text {
   display: flex;
@@ -241,7 +252,10 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 0.3rem solid transparent;
-  transition: all 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.option:focus-visible {
+  outline: 0.2rem solid #a729f5;
 }
 .option__letter-text {
   display: flex;

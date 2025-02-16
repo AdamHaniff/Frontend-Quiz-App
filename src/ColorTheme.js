@@ -30,6 +30,7 @@ function ColorTheme({ dispatch }) {
         className="theme__slider-container"
         htmlFor="theme-toggle"
         onClick={handleSliderClick}
+        tabIndex="0"
       >
         <span
           className={`theme__slider ${!isLightTheme ? "translate-12px" : ""}`}

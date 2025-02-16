@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { ThemeContext } from "./App";
 
 function Option({
@@ -15,6 +15,17 @@ function Option({
   const letters = ["A", "B", "C", "D"];
   const { isLightTheme } = useContext(ThemeContext);
 
+  // REFS
+  const optionRef = useRef(null);
+
+  // HANDLER FUNCTIONS
+  function handleOptionClick() {
+    if (optionRef.current) {
+      optionRef.current.blur(); // Removes the focus outline after the option is clicked
+    }
+    onSelect();
+  }
+
   return (
     <div
       className={`option ${isSelected ? "purple-border" : ""} ${
@@ -22,7 +33,9 @@ function Option({
       } ${isIncorrect ? "red-border" : ""} ${disabled ? "disabled" : ""} ${
         !isLightTheme ? "river-bed-bg box-shadow-dark" : ""
       }`}
-      onClick={onSelect}
+      onClick={handleOptionClick}
+      tabIndex="0"
+      ref={optionRef}
     >
       <div className="option__letter-text">
         <div

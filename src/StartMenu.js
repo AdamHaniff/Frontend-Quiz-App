@@ -30,6 +30,7 @@ function StartMenu({ dispatch }) {
             }`}
             key={quiz.title}
             onClick={() => dispatch({ type: "quizStarted", payload: quiz })}
+            tabIndex="0"
           >
             <Subject subjectObj={quiz} />
           </div>
