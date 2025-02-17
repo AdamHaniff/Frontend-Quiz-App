@@ -106,6 +106,10 @@ body {
   outline: 0.2rem solid #313e51;
   outline-offset: -0.1rem;
 }
+.theme__slider-container.white-outline:focus-visible {
+  outline: 0.2rem solid #fff;
+  outline-offset: -0.1rem;
+}
 .theme__slider {
   width: 1.2rem;
   height: 1.2rem;
@@ -222,6 +226,10 @@ body {
 }
 .question-completed-btn:focus-visible {
   outline: 0.2rem solid #313e51;
+  outline-offset: -0.1rem;
+}
+.question-completed-btn.white-outline-btn:focus-visible {
+  outline: 0.2rem solid #fff;
   outline-offset: -0.1rem;
 }
 .question__error-icon-text {

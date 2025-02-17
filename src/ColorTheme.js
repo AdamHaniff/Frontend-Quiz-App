@@ -10,6 +10,12 @@ function ColorTheme({ dispatch }) {
     dispatch({ type: "changeColorTheme" });
   }
 
+  function handleKeyPress(e) {
+    if (e.key === "Enter" || e.key === " ") {
+      handleSliderClick();
+    }
+  }
+
   return (
     <div className="theme">
       <svg
@@ -27,10 +33,13 @@ function ColorTheme({ dispatch }) {
       </svg>
       <input className="theme__checkbox" type="checkbox" id="theme-toggle" />
       <label
-        className="theme__slider-container"
+        className={`theme__slider-container ${
+          !isLightTheme ? "white-outline" : ""
+        }`}
         htmlFor="theme-toggle"
         onClick={handleSliderClick}
         tabIndex="0"
+        onKeyDown={handleKeyPress}
       >
         <span
           className={`theme__slider ${!isLightTheme ? "translate-12px" : ""}`}

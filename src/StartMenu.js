@@ -7,6 +7,17 @@ function StartMenu({ dispatch }) {
   // VARIABLES
   const { isLightTheme } = useContext(ThemeContext);
 
+  // HANDLER FUNCTIONS
+  function handleSubjectClick(quiz) {
+    dispatch({ type: "quizStarted", payload: quiz });
+  }
+
+  function handleKeyPress(e, quiz) {
+    if (e.key === "Enter" || e.key === " ") {
+      handleSubjectClick(quiz);
+    }
+  }
+
   return (
     <div className="start-menu">
       <div className="greeting">
@@ -29,8 +40,9 @@ function StartMenu({ dispatch }) {
               !isLightTheme ? "river-bed-bg box-shadow-dark" : ""
             }`}
             key={quiz.title}
-            onClick={() => dispatch({ type: "quizStarted", payload: quiz })}
+            onClick={() => handleSubjectClick(quiz)}
             tabIndex="0"
+            onKeyDown={(e) => handleKeyPress(e, quiz)}
           >
             <Subject subjectObj={quiz} />
           </div>

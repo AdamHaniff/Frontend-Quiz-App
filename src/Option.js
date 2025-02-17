@@ -26,6 +26,12 @@ function Option({
     onSelect();
   }
 
+  function handleKeyPress(e) {
+    if (e.key === "Enter" || e.key === " ") {
+      handleOptionClick();
+    }
+  }
+
   return (
     <div
       className={`option ${isSelected ? "purple-border" : ""} ${
@@ -36,6 +42,7 @@ function Option({
       onClick={handleOptionClick}
       tabIndex="0"
       ref={optionRef}
+      onKeyDown={handleKeyPress}
     >
       <div className="option__letter-text">
         <div

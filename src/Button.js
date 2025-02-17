@@ -8,7 +8,7 @@ function Button({ children, onClick }) {
   return (
     <button
       className={`question-completed-btn ${
-        !isLightTheme ? "box-shadow-dark" : ""
+        !isLightTheme ? "box-shadow-dark white-outline-btn" : ""
       }`}
       type="button"
       onClick={onClick}
