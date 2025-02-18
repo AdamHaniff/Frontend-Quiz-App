@@ -2,6 +2,7 @@ import { useContext } from "react";
 import data from "./data/data";
 import Subject from "./Subject";
 import { ThemeContext } from "./App";
+import { handleKeyPress } from "./helpers";
 
 function StartMenu({ dispatch }) {
   // VARIABLES
@@ -10,12 +11,6 @@ function StartMenu({ dispatch }) {
   // HANDLER FUNCTIONS
   function handleSubjectClick(quiz) {
     dispatch({ type: "quizStarted", payload: quiz });
-  }
-
-  function handleKeyPress(e, quiz) {
-    if (e.key === "Enter" || e.key === " ") {
-      handleSubjectClick(quiz);
-    }
   }
 
   return (
@@ -42,7 +37,7 @@ function StartMenu({ dispatch }) {
             key={quiz.title}
             onClick={() => handleSubjectClick(quiz)}
             tabIndex="0"
-            onKeyDown={(e) => handleKeyPress(e, quiz)}
+            onKeyDown={(e) => handleKeyPress(e, () => handleSubjectClick(quiz))}
           >
             <Subject subjectObj={quiz} />
           </div>

@@ -44,7 +44,7 @@ body {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 // ************ MIXINS ************
@@ -80,7 +80,7 @@ body {
 
 // ********* 375px LAYOUT *********
 body {
-  padding: 1.6rem 2.4rem 0;
+  padding: 1.6rem 2.4rem;
   background-image: url(../../public/images/pattern-background-mobile-light.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -214,7 +214,7 @@ body {
     color: $color-pickled-bluewood;
     font-size: 4rem;
     font-weight: $fw-light;
-    transition: all 0.3s;
+    transition: color 0.3s;
 
     &--medium-bold {
       font-weight: $fw-medium;
@@ -365,7 +365,7 @@ body {
     color: $color-pickled-bluewood;
     font-size: 1.8rem;
     font-weight: $fw-medium;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
 
   &__correct-error {
@@ -388,7 +388,7 @@ body {
     color: $color-pickled-bluewood;
     font-size: 4rem;
     font-weight: $fw-light;
-    transition: all 0.3s;
+    transition: color 0.3s;
 
     &--medium-bold {
       font-weight: $fw-medium;
@@ -423,6 +423,35 @@ body {
   &__questions {
     color: $color-jet-grey;
     font-size: 1.8rem;
+  }
+}
+
+// ******* 320px - 374px LAYOUT *******
+@media only screen and (max-width: 23.4375em) {
+  // ************ GREETING ************
+  .greeting {
+    &__text {
+      font-size: 3.8rem;
+    }
+  }
+
+  // ************** OPTION *************
+  .option {
+    &__text {
+      font-size: 1.6rem;
+    }
+
+    &__correct-error {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  // ************ COMPLETED ***********
+  .completed {
+    &__header {
+      font-size: 3.8rem;
+    }
   }
 }
 

@@ -39,6 +39,9 @@ function Question({ dispatch, subjectObj, index }) {
   }
 
   function handleNextQuestion() {
+    // Make the currently focused element lose focus
+    document.activeElement.blur();
+
     // Reset 'selectedIndex' and 'isSubmitted'
     setSelectedIndex(null);
     setIsSubmitted(false);

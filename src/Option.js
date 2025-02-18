@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react";
 import { ThemeContext } from "./App";
+import { handleKeyPress } from "./helpers";
 
 function Option({
   option,
@@ -26,12 +27,6 @@ function Option({
     onSelect();
   }
 
-  function handleKeyPress(e) {
-    if (e.key === "Enter" || e.key === " ") {
-      handleOptionClick();
-    }
-  }
-
   return (
     <div
       className={`option ${isSelected ? "purple-border" : ""} ${
@@ -40,9 +35,9 @@ function Option({
         !isLightTheme ? "river-bed-bg box-shadow-dark" : ""
       }`}
       onClick={handleOptionClick}
-      tabIndex="0"
+      tabIndex={disabled ? "-1" : "0"}
       ref={optionRef}
-      onKeyDown={handleKeyPress}
+      onKeyDown={(e) => handleKeyPress(e, handleOptionClick)}
     >
       <div className="option__letter-text">
         <div

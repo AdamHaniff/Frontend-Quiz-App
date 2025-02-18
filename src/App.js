@@ -17,7 +17,7 @@ const initialState = {
 // CONTEXTS
 export const ThemeContext = createContext();
 
-// FUNCTIONS
+// REDUCER
 function reducer(state, action) {
   switch (action.type) {
     case "quizStarted":

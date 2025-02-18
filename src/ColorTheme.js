@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "./App";
+import { handleKeyPress } from "./helpers";
 
 function ColorTheme({ dispatch }) {
   // VARIABLES
@@ -8,12 +9,6 @@ function ColorTheme({ dispatch }) {
   // HANDLER FUNCTIONS
   function handleSliderClick() {
     dispatch({ type: "changeColorTheme" });
-  }
-
-  function handleKeyPress(e) {
-    if (e.key === "Enter" || e.key === " ") {
-      handleSliderClick();
-    }
   }
 
   return (
@@ -39,7 +34,7 @@ function ColorTheme({ dispatch }) {
         htmlFor="theme-toggle"
         onClick={handleSliderClick}
         tabIndex="0"
-        onKeyDown={handleKeyPress}
+        onKeyDown={(e) => handleKeyPress(e, handleSliderClick)}
       >
         <span
           className={`theme__slider ${!isLightTheme ? "translate-12px" : ""}`}
