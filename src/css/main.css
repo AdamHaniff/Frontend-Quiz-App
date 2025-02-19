@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  padding: 1.6rem 2.4rem;
+  padding: clamp(1.6rem, 1.6rem + 38 * (100vw - 37.5rem) / 393, 5.4rem) clamp(2.4rem, 2.4rem + 40 * (100vw - 37.5rem) / 393, 6.4rem);
   background-image: url(../../public/images/pattern-background-mobile-light.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,11 +32,11 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: clamp(0.9rem, 3.2rem - 23 * (100vw - 37.5rem) / 393, 3.2rem);
 }
 
 .header {
-  margin-bottom: 1.6rem;
+  margin-bottom: clamp(1.6rem, 1.6rem + 38 * (100vw - 37.5rem) / 393, 5.4rem);
 }
 .header__subject-theme {
   display: flex;
@@ -46,32 +46,31 @@ body {
 .subject {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: clamp(1.6rem, 1.6rem + 16 * (100vw - 37.5rem) / 393, 3.2rem);
 }
 .subject__icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.6rem;
-  background: #f6e7ff;
+  width: clamp(4rem, 4rem + 16 * (100vw - 37.5rem) / 393, 5.6rem);
+  height: clamp(4rem, 4rem + 16 * (100vw - 37.5rem) / 393, 5.6rem);
+  border-radius: clamp(0.6rem, 0.6rem + 6 * (100vw - 37.5rem) / 393, 1.2rem);
 }
 .subject__icon {
-  width: 2.8571rem;
-  height: 2.8571rem;
+  width: clamp(2.8rem, 2.8rem + 12 * (100vw - 37.5rem) / 393, 4rem);
+  height: clamp(2.8rem, 2.8rem + 12 * (100vw - 37.5rem) / 393, 4rem);
 }
 .subject__name {
   color: #313e51;
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 1.8rem + 10 * (100vw - 37.5rem) / 393, 2.8rem);
   font-weight: 500;
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
 .subject__container {
   width: 100%;
   background: #fff;
   padding: 1.2rem;
-  border-radius: 1.2rem;
+  border-radius: clamp(1.2rem, 1.2rem + 12 * (100vw - 37.5rem) / 393, 2.4rem);
   box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -86,8 +85,8 @@ body {
   margin-left: auto;
 }
 .theme__icon {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: clamp(1.6rem, 1.6rem + 8 * (100vw - 37.5rem) / 393, 2.4rem);
+  height: clamp(1.6rem, 1.6rem + 8 * (100vw - 37.5rem) / 393, 2.4rem);
 }
 .theme__icon path {
   transition: all 0.3s;
@@ -124,12 +123,12 @@ body {
 .start-menu {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: clamp(4rem, 4rem + 24 * (100vw - 37.5rem) / 393, 6.4rem);
 }
 .start-menu__subjects {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: clamp(1.2rem, 1.2rem + 12 * (100vw - 37.5rem) / 393, 2.4rem);
 }
 
 .greeting {
@@ -142,7 +141,7 @@ body {
   flex-direction: column;
   gap: 0.8rem;
   color: #313e51;
-  font-size: 4rem;
+  font-size: clamp(4rem, 4rem + 24 * (100vw - 37.5rem) / 393, 6.4rem);
   font-weight: 300;
   transition: color 0.3s;
 }
@@ -151,10 +150,10 @@ body {
 }
 .greeting__instruction {
   color: #626c7f;
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1.4rem + 6 * (100vw - 37.5rem) / 393, 2rem);
   font-style: italic;
-  line-height: 2.1rem;
-  transition: all 0.3s;
+  line-height: clamp(2.1rem, 2.1rem + 9 * (100vw - 37.5rem) / 393, 3rem);
+  transition: color 0.3s;
 }
 
 .question {
@@ -165,9 +164,9 @@ body {
 .question__number {
   display: inline-block;
   color: #626c7f;
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1.4rem + 6 * (100vw - 37.5rem) / 393, 2rem);
   font-style: italic;
-  line-height: 2.1rem;
+  line-height: clamp(2.1rem, 2.1rem + 9 * (100vw - 37.5rem) / 393, 3rem);
   margin-bottom: 1.2rem;
   transition: all 0.3s;
 }
@@ -254,7 +253,7 @@ body {
   width: 100%;
   background: #fff;
   padding: 1.2rem;
-  border-radius: 1.2rem;
+  border-radius: clamp(1.2rem, 1.2rem + 12 * (100vw - 37.5rem) / 393, 2.4rem);
   box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
   display: flex;
   align-items: center;
@@ -274,9 +273,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.6rem;
+  width: clamp(4rem, 4rem + 16 * (100vw - 37.5rem) / 393, 5.6rem);
+  height: clamp(4rem, 4rem + 16 * (100vw - 37.5rem) / 393, 5.6rem);
+  border-radius: clamp(0.6rem, 0.6rem + 6 * (100vw - 37.5rem) / 393, 1.2rem);
   background: #f4f6fa;
   color: #626c7f;
   font-size: 1.8rem;

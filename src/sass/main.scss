@@ -52,24 +52,24 @@ body {
   width: 100%;
   background: $color-white;
   padding: 1.2rem;
-  border-radius: 1.2rem;
+  border-radius: $responsive-12px-24px;
   box-shadow: 0 1.6rem 4rem 0 rgba(143, 160, 193, 0.14);
 }
 
 @mixin italic-text-styles {
   color: $color-jet-grey;
-  font-size: 1.4rem;
+  font-size: $responsive-14px-20px;
   font-style: italic;
-  line-height: 2.1rem;
+  line-height: $responsive-21px-30px;
 }
 
 @mixin icon-letter-styles {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.6rem;
+  width: $responsive-40px-56px;
+  height: $responsive-40px-56px;
+  border-radius: $responsive-6px-12px;
 }
 
 @mixin correct-error-styles {
@@ -78,9 +78,88 @@ body {
   height: 3.2rem;
 }
 
+// ************* VARIABLES ************
+$responsive-6px-12px: clamp(
+  0.6rem,
+  calc(0.6rem + (12 - 6) * ((100vw - 37.5rem) / (768 - 375))),
+  1.2rem
+);
+
+$responsive-12px-24px: clamp(
+  1.2rem,
+  calc(1.2rem + (24 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-14px-20px: clamp(
+  1.4rem,
+  calc(1.4rem + (20 - 14) * ((100vw - 37.5rem) / (768 - 375))),
+  2rem
+);
+
+$responsive-16px-24px: clamp(
+  1.6rem,
+  calc(1.6rem + (24 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-16px-32px: clamp(
+  1.6rem,
+  calc(1.6rem + (32 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
+$responsive-16px-54px: clamp(
+  1.6rem,
+  calc(1.6rem + (54 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  5.4rem
+);
+
+$responsive-18px-28px: clamp(
+  1.8rem,
+  calc(1.8rem + (28 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  2.8rem
+);
+
+$responsive-21px-30px: clamp(
+  2.1rem,
+  calc(2.1rem + (30 - 21) * ((100vw - 37.5rem) / (768 - 375))),
+  3rem
+);
+
+$responsive-24px-64px: clamp(
+  2.4rem,
+  calc(2.4rem + (64 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  6.4rem
+);
+
+$responsive-28px-40px: clamp(
+  2.8rem,
+  calc(2.8rem + (40 - 28) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-32px-9px: clamp(
+  0.9rem,
+  calc(3.2rem - (32 - 9) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
+$responsive-40px-56px: clamp(
+  4rem,
+  calc(4rem + (56 - 40) * ((100vw - 37.5rem) / (768 - 375))),
+  5.6rem
+);
+
+$responsive-40px-64px: clamp(
+  4rem,
+  calc(4rem + (64 - 40) * ((100vw - 37.5rem) / (768 - 375))),
+  6.4rem
+);
+
 // ********* 375px LAYOUT *********
 body {
-  padding: 1.6rem 2.4rem;
+  padding: $responsive-16px-54px $responsive-24px-64px;
   background-image: url(../../public/images/pattern-background-mobile-light.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -90,12 +169,12 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: $responsive-32px-9px;
 }
 
 // ************ HEADER ************
 .header {
-  margin-bottom: 1.6rem;
+  margin-bottom: $responsive-16px-54px;
 
   &__subject-theme {
     display: flex;
@@ -107,23 +186,22 @@ body {
 .subject {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: $responsive-16px-32px;
 
   &__icon-container {
     @include icon-letter-styles;
-    background: $color-blue-chalk;
   }
 
   &__icon {
-    width: 2.8571rem;
-    height: 2.8571rem;
+    width: $responsive-28px-40px;
+    height: $responsive-28px-40px;
   }
 
   &__name {
     color: $color-pickled-bluewood;
-    font-size: 1.8rem;
+    font-size: $responsive-18px-28px;
     font-weight: $fw-medium;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
 
   &__container {
@@ -144,8 +222,8 @@ body {
   margin-left: auto;
 
   &__icon {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: $responsive-16px-24px;
+    height: $responsive-16px-24px;
 
     & path {
       transition: all 0.3s;
@@ -192,12 +270,12 @@ body {
 .start-menu {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: $responsive-40px-64px;
 
   &__subjects {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: $responsive-12px-24px;
   }
 }
 
@@ -212,7 +290,7 @@ body {
     flex-direction: column;
     gap: 0.8rem;
     color: $color-pickled-bluewood;
-    font-size: 4rem;
+    font-size: $responsive-40px-64px;
     font-weight: $fw-light;
     transition: color 0.3s;
 
@@ -223,7 +301,7 @@ body {
 
   &__instruction {
     @include italic-text-styles;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
 }
 
