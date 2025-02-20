@@ -14,7 +14,7 @@ html {
 body {
   background: #f4f6fa;
   font-family: "Rubik", serif;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 }
 
 html,
@@ -27,6 +27,11 @@ body {
   background-image: url(../../public/images/pattern-background-mobile-light.svg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: 0.7rem;
+}
+
+.dark-pattern-bg {
+  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
 }
 
 .app {
@@ -81,7 +86,7 @@ body {
 .theme {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: clamp(0.8rem, 0.8rem + 8 * (100vw - 37.5rem) / 393, 1.6rem);
   margin-left: auto;
 }
 .theme__icon {
@@ -118,6 +123,9 @@ body {
   top: 0.4rem;
   left: 0.4rem;
   transition: transform 0.3s;
+}
+.theme__slider--translate {
+  transform: translateX(1.2rem);
 }
 
 .start-menu {
@@ -356,6 +364,26 @@ body {
     font-size: 3.8rem;
   }
 }
+@media only screen and (min-width: 48em) {
+  body {
+    background-image: url(../../public/images/pattern-background-tablet-light.svg);
+    background-position-x: -24.5rem;
+  }
+  .dark-pattern-bg {
+    background-image: url(../../public/images/pattern-background-tablet-dark.svg);
+  }
+  .theme__slider-container {
+    width: 4.8rem;
+    height: 2.8rem;
+  }
+  .theme__slider {
+    width: 2rem;
+    height: 2rem;
+  }
+  .theme__slider--translate {
+    transform: translateX(2rem);
+  }
+}
 .purple-border {
   border: 0.3rem solid #a729f5;
 }
@@ -389,12 +417,8 @@ body {
   cursor: not-allowed;
 }
 
-.translate-12px {
-  transform: translateX(1.2rem);
-}
-
 .pickled-bluewood-bg {
-  background: #313e51;
+  background-color: #313e51;
 }
 
 .cloudy-blue-color {
@@ -407,8 +431,4 @@ body {
 
 .box-shadow-dark {
   box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
-}
-
-.dark-pattern-bg {
-  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
 }/*# sourceMappingURL=main.css.map */

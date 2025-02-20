@@ -39,7 +39,7 @@ html {
 body {
   background: $color-white-smoke;
   font-family: $font-rubik;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 }
 
 html,
@@ -83,6 +83,12 @@ $responsive-6px-12px: clamp(
   0.6rem,
   calc(0.6rem + (12 - 6) * ((100vw - 37.5rem) / (768 - 375))),
   1.2rem
+);
+
+$responsive-8px-16px: clamp(
+  0.8rem,
+  calc(0.8rem + (16 - 8) * ((100vw - 37.5rem) / (768 - 375))),
+  1.6rem
 );
 
 $responsive-12px-24px: clamp(
@@ -157,12 +163,19 @@ $responsive-40px-64px: clamp(
   6.4rem
 );
 
+// ********** MOBILE LAYOUTS **********
+
 // ********* 375px LAYOUT *********
 body {
   padding: $responsive-16px-54px $responsive-24px-64px;
   background-image: url(../../public/images/pattern-background-mobile-light.svg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: 0.7rem;
+}
+
+.dark-pattern-bg {
+  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
 }
 
 // ************** APP **************
@@ -218,7 +231,7 @@ body {
 .theme {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: $responsive-8px-16px;
   margin-left: auto;
 
   &__icon {
@@ -263,6 +276,10 @@ body {
     top: 0.4rem;
     left: 0.4rem;
     transition: transform 0.3s;
+
+    &--translate {
+      transform: translateX(1.2rem);
+    }
   }
 }
 
@@ -533,6 +550,37 @@ body {
   }
 }
 
+// ********** TABLET LAYOUTS ***********
+
+// ************ 768px LAYOUT ***********
+@media only screen and (min-width: 48em) {
+  body {
+    background-image: url(../../public/images/pattern-background-tablet-light.svg);
+    background-position-x: -24.5rem;
+  }
+
+  .dark-pattern-bg {
+    background-image: url(../../public/images/pattern-background-tablet-dark.svg);
+  }
+
+  // ************** THEME **************
+  .theme {
+    &__slider-container {
+      width: 4.8rem;
+      height: 2.8rem;
+    }
+
+    &__slider {
+      width: 2rem;
+      height: 2rem;
+
+      &--translate {
+        transform: translateX(2rem);
+      }
+    }
+  }
+}
+
 // ******** DYNAMIC-STYLES ********
 .purple-border {
   border: 0.3rem solid $color-electric-purple;
@@ -567,12 +615,8 @@ body {
   cursor: not-allowed;
 }
 
-.translate-12px {
-  transform: translateX(1.2rem);
-}
-
 .pickled-bluewood-bg {
-  background: $color-pickled-bluewood;
+  background-color: $color-pickled-bluewood;
 }
 
 .cloudy-blue-color {
@@ -585,8 +629,4 @@ body {
 
 .box-shadow-dark {
   box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
-}
-
-.dark-pattern-bg {
-  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
 }

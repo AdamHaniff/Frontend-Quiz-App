@@ -37,7 +37,9 @@ function ColorTheme({ dispatch }) {
         onKeyDown={(e) => handleKeyPress(e, handleSliderClick)}
       >
         <span
-          className={`theme__slider ${!isLightTheme ? "translate-12px" : ""}`}
+          className={`theme__slider ${
+            !isLightTheme ? "theme__slider--translate" : ""
+          }`}
         ></span>
       </label>
       <svg
