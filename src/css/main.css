@@ -47,6 +47,9 @@ body {
   display: flex;
   align-items: center;
 }
+.header__subject-theme .subject {
+  gap: clamp(1.6rem, 1.6rem + 8 * (100vw - 37.5rem) / 393, 2.4rem);
+}
 
 .subject {
   display: flex;
@@ -167,7 +170,7 @@ body {
 .question {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: clamp(4rem, 4rem + 24 * (100vw - 37.5rem) / 393, 6.4rem);
 }
 .question__number {
   display: inline-block;
@@ -175,16 +178,16 @@ body {
   font-size: clamp(1.4rem, 1.4rem + 6 * (100vw - 37.5rem) / 393, 2rem);
   font-style: italic;
   line-height: clamp(2.1rem, 2.1rem + 9 * (100vw - 37.5rem) / 393, 3rem);
-  margin-bottom: 1.2rem;
-  transition: all 0.3s;
+  margin-bottom: clamp(1.2rem, 1.2rem + 15 * (100vw - 37.5rem) / 393, 2.7rem);
+  transition: color 0.3s;
 }
 .question__text {
   color: #313e51;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2rem + 16 * (100vw - 37.5rem) / 393, 3.6rem);
   font-weight: 500;
-  line-height: 2.4rem;
-  margin-bottom: 2.4rem;
-  transition: all 0.3s;
+  line-height: clamp(2.4rem, 2.4rem + 19.2 * (100vw - 37.5rem) / 393, 4.32rem);
+  margin-bottom: clamp(2.4rem, 2.4rem + 16 * (100vw - 37.5rem) / 393, 4rem);
+  transition: color 0.3s;
 }
 .question__progress-container {
   height: 1.6rem;
@@ -211,12 +214,12 @@ body {
 .question__options-submit-error {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: clamp(1.2rem, 1.2rem + 20 * (100vw - 37.5rem) / 393, 3.2rem);
 }
 .question__options {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: clamp(1.2rem, 1.2rem + 12 * (100vw - 37.5rem) / 393, 2.4rem);
 }
 .question-completed-btn {
   height: 5.6rem;

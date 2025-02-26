@@ -97,6 +97,18 @@ $responsive-12px-24px: clamp(
   2.4rem
 );
 
+$responsive-12px-27px: clamp(
+  1.2rem,
+  calc(1.2rem + (27 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  2.7rem
+);
+
+$responsive-12px-32px: clamp(
+  1.2rem,
+  calc(1.2rem + (32 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
 $responsive-14px-20px: clamp(
   1.4rem,
   calc(1.4rem + (20 - 14) * ((100vw - 37.5rem) / (768 - 375))),
@@ -127,10 +139,28 @@ $responsive-18px-28px: clamp(
   2.8rem
 );
 
+$responsive-20px-36px: clamp(
+  2rem,
+  calc(2rem + (36 - 20) * ((100vw - 37.5rem) / (768 - 375))),
+  3.6rem
+);
+
 $responsive-21px-30px: clamp(
   2.1rem,
   calc(2.1rem + (30 - 21) * ((100vw - 37.5rem) / (768 - 375))),
   3rem
+);
+
+$responsive-24px-40px: clamp(
+  2.4rem,
+  calc(2.4rem + (40 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-24px-43px: clamp(
+  2.4rem,
+  calc(2.4rem + (43.2 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  4.32rem
 );
 
 $responsive-24px-64px: clamp(
@@ -192,6 +222,10 @@ body {
   &__subject-theme {
     display: flex;
     align-items: center;
+
+    & .subject {
+      gap: $responsive-16px-24px;
+    }
   }
 }
 
@@ -326,22 +360,22 @@ body {
 .question {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: $responsive-40px-64px;
 
   &__number {
     display: inline-block;
     @include italic-text-styles;
-    margin-bottom: 1.2rem;
-    transition: all 0.3s;
+    margin-bottom: $responsive-12px-27px;
+    transition: color 0.3s;
   }
 
   &__text {
     color: $color-pickled-bluewood;
-    font-size: 2rem;
+    font-size: $responsive-20px-36px;
     font-weight: $fw-medium;
-    line-height: 2.4rem;
-    margin-bottom: 2.4rem;
-    transition: all 0.3s;
+    line-height: $responsive-24px-43px;
+    margin-bottom: $responsive-24px-40px;
+    transition: color 0.3s;
   }
 
   &__progress-container {
@@ -373,13 +407,13 @@ body {
   &__options-submit-error {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: $responsive-12px-32px;
   }
 
   &__options {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: $responsive-12px-24px;
   }
 
   &-completed-btn {
