@@ -74,11 +74,17 @@ body {
 
 @mixin correct-error-styles {
   display: block;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: $responsive-32px-40px;
+  height: $responsive-32px-40px;
 }
 
 // ************* VARIABLES ************
+$responsive-0px-24px: clamp(
+  0rem,
+  calc(0rem + (24 - 0) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
 $responsive-6px-12px: clamp(
   0.6rem,
   calc(0.6rem + (12 - 6) * ((100vw - 37.5rem) / (768 - 375))),
@@ -133,10 +139,22 @@ $responsive-16px-54px: clamp(
   5.4rem
 );
 
+$responsive-18px-24px: clamp(
+  1.8rem,
+  calc(1.8rem + (24 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
 $responsive-18px-28px: clamp(
   1.8rem,
   calc(1.8rem + (28 - 18) * ((100vw - 37.5rem) / (768 - 375))),
   2.8rem
+);
+
+$responsive-18px-36px: clamp(
+  1.8rem,
+  calc(1.8rem + (36 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  3.6rem
 );
 
 $responsive-20px-36px: clamp(
@@ -181,6 +199,18 @@ $responsive-32px-9px: clamp(
   3.2rem
 );
 
+$responsive-32px-40px: clamp(
+  3.2rem,
+  calc(3.2rem + (40 - 32) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-32px-48px: clamp(
+  3.2rem,
+  calc(3.2rem + (48 - 32) * ((100vw - 37.5rem) / (768 - 375))),
+  4.8rem
+);
+
 $responsive-40px-56px: clamp(
   4rem,
   calc(4rem + (56 - 40) * ((100vw - 37.5rem) / (768 - 375))),
@@ -191,6 +221,18 @@ $responsive-40px-64px: clamp(
   4rem,
   calc(4rem + (64 - 40) * ((100vw - 37.5rem) / (768 - 375))),
   6.4rem
+);
+
+$responsive-56px-92px: clamp(
+  5.6rem,
+  calc(5.6rem + (92 - 56) * ((100vw - 37.5rem) / (768 - 375))),
+  9.2rem
+);
+
+$responsive-88px-144px: clamp(
+  8.8rem,
+  calc(8.8rem + (144 - 88) * ((100vw - 37.5rem) / (768 - 375))),
+  14.4rem
 );
 
 // ********** MOBILE LAYOUTS **********
@@ -417,15 +459,15 @@ body {
   }
 
   &-completed-btn {
-    height: 5.6rem;
-    padding: 1.2rem;
-    border-radius: 1.2rem;
+    height: $responsive-56px-92px;
+    padding: $responsive-12px-32px;
+    border-radius: $responsive-12px-24px;
     background: $color-electric-purple;
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
     border: none;
     color: $color-white;
     font-family: $font-rubik;
-    font-size: 1.8rem;
+    font-size: $responsive-18px-28px;
     font-weight: $fw-medium;
     transition: box-shadow 0.3s;
 
@@ -456,8 +498,9 @@ body {
 
   &__error-text {
     color: $color-valentine-red;
-    font-size: 1.8rem;
-    transition: all 0.3s;
+    font-size: $responsive-18px-24px;
+    line-height: $responsive-18px-36px;
+    transition: color 0.3s;
   }
 }
 
@@ -477,22 +520,22 @@ body {
   &__letter-text {
     display: flex;
     align-items: center;
-    gap: 1.6rem;
+    gap: $responsive-16px-32px;
   }
 
   &__letter {
     @include icon-letter-styles;
     background: $color-white-smoke;
     color: $color-jet-grey;
-    font-size: 1.8rem;
+    font-size: $responsive-18px-28px;
     font-weight: $fw-medium;
     flex-shrink: 0;
-    transition: all 0.3s;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   &__text {
     color: $color-pickled-bluewood;
-    font-size: 1.8rem;
+    font-size: $responsive-18px-28px;
     font-weight: $fw-medium;
     transition: color 0.3s;
   }
@@ -508,14 +551,14 @@ body {
 .completed {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: $responsive-40px-64px;
 
   &__header {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     color: $color-pickled-bluewood;
-    font-size: 4rem;
+    font-size: $responsive-40px-64px;
     font-weight: $fw-light;
     transition: color 0.3s;
 
@@ -527,31 +570,37 @@ body {
   &__card-btn {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: $responsive-12px-32px;
   }
 
   &__card {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-    border-radius: 1.2rem;
+    border-radius: $responsive-12px-24px;
     background: $color-white;
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
-    padding: 3.2rem;
+    padding: $responsive-32px-48px;
     align-items: center;
-    transition: all 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    & .subject {
+      gap: $responsive-16px-24px;
+      margin-bottom: $responsive-0px-24px;
+    }
   }
 
   &__score {
     color: $color-pickled-bluewood;
-    font-size: 8.8rem;
+    font-size: $responsive-88px-144px;
     font-weight: $fw-medium;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
 
   &__questions {
     color: $color-jet-grey;
-    font-size: 1.8rem;
+    font-size: $responsive-18px-24px;
+    line-height: $responsive-18px-36px;
   }
 }
 
