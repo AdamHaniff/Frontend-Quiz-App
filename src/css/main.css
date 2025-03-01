@@ -377,9 +377,17 @@ body {
   body {
     background-image: url(../../public/images/pattern-background-tablet-light.svg);
     background-position-x: -24.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(6.4rem, 6.4rem + 33 * (100vw - 76.8rem) / 672, 9.7rem);
   }
   .dark-pattern-bg {
     background-image: url(../../public/images/pattern-background-tablet-dark.svg);
+  }
+  #root {
+    flex: 1;
+    max-width: 64.02rem;
   }
   .theme__slider-container {
     width: 4.8rem;
@@ -391,6 +399,39 @@ body {
   }
   .theme__slider--translate {
     transform: translateX(2rem);
+  }
+}
+@media only screen and (min-width: 90em) {
+  body {
+    background-image: url(../../public/images/pattern-background-desktop-light.svg);
+  }
+  .dark-pattern-bg {
+    background-image: url(../../public/images/pattern-background-desktop-dark.svg);
+  }
+  #root {
+    max-width: 116rem;
+  }
+  .app {
+    gap: 9.9rem;
+  }
+  .header {
+    margin-bottom: initial;
+  }
+  .subject__container {
+    padding: 2rem;
+  }
+  .start-menu {
+    flex-direction: row;
+    gap: initial;
+  }
+  .start-menu > * {
+    flex: 1;
+  }
+  .start-menu__subjects {
+    max-width: 56.4rem;
+  }
+  .greeting {
+    gap: 4.8rem;
   }
 }
 .purple-border {
