@@ -14,6 +14,7 @@ $color-tealish-green: #26d782;
 $color-valentine-red: #ee5454;
 $color-cloudy-blue: #abc1e1;
 $color-river-bed: #3b4d66;
+$color-tyrian-purple: #bd55ff;
 
 // ********** FONT-FAMILY **********
 $font-rubik: "Rubik", serif;
@@ -301,7 +302,8 @@ body {
 
   &__container {
     @include subject-option-styles;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    border: 0.3rem solid transparent;
+    transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
 
     &:focus-visible {
       outline: 0.2rem solid $color-electric-purple;
@@ -335,6 +337,7 @@ body {
     background: $color-electric-purple;
     border-radius: 99.9rem;
     position: relative;
+    transition: background-color 0.3s;
 
     &:focus-visible {
       outline: 0.2rem solid $color-pickled-bluewood;
@@ -685,6 +688,7 @@ body {
 @media only screen and (min-width: 90em) {
   body {
     background-image: url(../../public/images/pattern-background-desktop-light.svg);
+    background-position-x: initial;
   }
 
   .dark-pattern-bg {
@@ -729,6 +733,93 @@ body {
   // ************ GREETING ************
   .greeting {
     gap: 4.8rem;
+  }
+
+  // ************* QUESTION ************
+  .question {
+    flex-direction: row;
+    gap: initial;
+    justify-content: space-between;
+
+    > * {
+      flex: 1;
+    }
+
+    &__number-text-progress {
+      max-width: 46.5rem;
+    }
+
+    &__text {
+      margin-bottom: 16.4rem;
+    }
+
+    &__options-submit-error {
+      max-width: 56.4rem;
+    }
+  }
+
+  // ************* OPTION *************
+  .option {
+    padding: 1.8rem 2rem;
+
+    &__correct-error {
+      margin-left: 2rem;
+    }
+  }
+
+  // ************ COMPLETED ************
+  .completed {
+    flex-direction: row;
+    gap: initial;
+    justify-content: space-between;
+
+    &__card-btn {
+      width: 56.4rem;
+    }
+  }
+}
+
+// ******* DESKTOP HOVER STATES *******
+
+// *********** 992px LAYOUT ***********
+@media only screen and (min-width: 62em) {
+  // ************** THEME **************
+  .theme {
+    &__slider-container:hover {
+      cursor: pointer;
+      background-color: $color-tyrian-purple;
+    }
+  }
+
+  // ************* SUBJECT *************
+  .subject {
+    &__container:hover {
+      cursor: pointer;
+      border: 0.3rem solid $color-electric-purple;
+    }
+  }
+
+  // ************ QUESTION *************
+  .question {
+    &-completed-btn:hover {
+      cursor: pointer;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.5) 0%,
+          rgba(255, 255, 255, 0.5) 100%
+        ),
+        var(--Purple, #a729f5);
+    }
+  }
+
+  // ************* OPTION *************
+  .option:hover {
+    cursor: pointer;
+
+    & .option__letter-text .option__letter {
+      background: $color-blue-chalk;
+      color: $color-electric-purple;
+    }
   }
 }
 
