@@ -1,0 +1,48 @@
+// ******* DESKTOP HOVER STATES *******
+
+// *********** 992px LAYOUT ***********
+@media only screen and (min-width: 62em) {
+  // ************** THEME **************
+  .theme {
+    &__slider-container:hover {
+      cursor: pointer;
+      background-color: $color-tyrian-purple;
+    }
+  }
+
+  // ************* SUBJECT *************
+  .subject {
+    &__container:hover {
+      cursor: pointer;
+      border: 0.3rem solid $color-electric-purple;
+    }
+  }
+
+  // ************ QUESTION *************
+  .question {
+    &-completed-btn:hover {
+      cursor: pointer;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.5) 0%,
+          rgba(255, 255, 255, 0.5) 100%
+        ),
+        var(--Purple, #a729f5);
+    }
+  }
+
+  // ************* OPTION *************
+  .option:hover {
+    cursor: pointer;
+
+    & .option__letter-text .option__letter {
+      background: $color-blue-chalk;
+      color: $color-electric-purple;
+    }
+
+    &.purple-border .option__letter-text .option__letter {
+      background: $color-electric-purple;
+      color: $color-white;
+    }
+  }
+}

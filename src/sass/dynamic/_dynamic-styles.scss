@@ -1,0 +1,49 @@
+// ******** DYNAMIC-STYLES ********
+.purple-border {
+  border: 0.3rem solid $color-electric-purple;
+}
+
+.purple-background {
+  background: $color-electric-purple;
+}
+
+.white-color {
+  color: $color-white;
+}
+
+.green-border {
+  border: 0.3rem solid $color-tealish-green;
+}
+
+.green-background {
+  background: $color-tealish-green;
+}
+
+.red-border {
+  border: 0.3rem solid $color-valentine-red;
+}
+
+.red-background {
+  background: $color-valentine-red;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.pickled-bluewood-bg {
+  background-color: $color-pickled-bluewood;
+}
+
+.cloudy-blue-color {
+  color: $color-cloudy-blue;
+}
+
+.river-bed-bg {
+  background: $color-river-bed;
+}
+
+.box-shadow-dark {
+  box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
+}

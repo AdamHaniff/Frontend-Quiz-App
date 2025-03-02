@@ -1,0 +1,399 @@
+// ********** MOBILE LAYOUTS **********
+
+// ********* 375px LAYOUT *********
+body {
+  padding: $responsive-16px-54px $responsive-24px-64px;
+  background-image: url(../../public/images/pattern-background-mobile-light.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 0.7rem;
+}
+
+.dark-pattern-bg {
+  background-image: url(../../public/images/pattern-background-mobile-dark.svg);
+}
+
+// ************** APP **************
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: $responsive-32px-9px;
+}
+
+// ************ HEADER ************
+.header {
+  margin-bottom: $responsive-16px-54px;
+
+  &__subject-theme {
+    display: flex;
+    align-items: center;
+
+    & .subject {
+      gap: $responsive-16px-24px;
+    }
+  }
+}
+
+// ************ SUBJECT ************
+.subject {
+  display: flex;
+  align-items: center;
+  gap: $responsive-16px-32px;
+
+  &__icon-container {
+    @include icon-letter-styles;
+  }
+
+  &__icon {
+    width: $responsive-28px-40px;
+    height: $responsive-28px-40px;
+  }
+
+  &__name {
+    color: $color-pickled-bluewood;
+    font-size: $responsive-18px-28px;
+    font-weight: $fw-medium;
+    transition: color 0.3s;
+  }
+
+  &__container {
+    @include subject-option-styles;
+    border: 0.3rem solid transparent;
+    transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-electric-purple;
+    }
+  }
+}
+
+// ************ THEME *************
+.theme {
+  display: flex;
+  align-items: center;
+  gap: $responsive-8px-16px;
+  margin-left: auto;
+
+  &__icon {
+    width: $responsive-16px-24px;
+    height: $responsive-16px-24px;
+
+    & path {
+      transition: all 0.3s;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__slider-container {
+    width: 3.2rem;
+    height: 2rem;
+    background: $color-electric-purple;
+    border-radius: 99.9rem;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-pickled-bluewood;
+      outline-offset: -0.1rem;
+    }
+
+    &.white-outline {
+      &:focus-visible {
+        outline: 0.2rem solid $color-white;
+        outline-offset: -0.1rem;
+      }
+    }
+  }
+
+  &__slider {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: $color-white;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    transition: transform 0.3s;
+
+    &--translate {
+      transform: translateX(1.2rem);
+    }
+  }
+}
+
+// ********** START-MENU **********
+.start-menu {
+  display: flex;
+  flex-direction: column;
+  gap: $responsive-40px-64px;
+
+  &__subjects {
+    display: flex;
+    flex-direction: column;
+    gap: $responsive-12px-24px;
+  }
+}
+
+// *********** GREETING ***********
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: $color-pickled-bluewood;
+    font-size: $responsive-40px-64px;
+    font-weight: $fw-light;
+    transition: color 0.3s;
+
+    &--medium-bold {
+      font-weight: $fw-medium;
+    }
+  }
+
+  &__instruction {
+    @include italic-text-styles;
+    transition: color 0.3s;
+  }
+}
+
+// ************ QUESTION ***********
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: $responsive-40px-64px;
+
+  &__number {
+    display: inline-block;
+    @include italic-text-styles;
+    margin-bottom: $responsive-12px-27px;
+    transition: color 0.3s;
+  }
+
+  &__text {
+    color: $color-pickled-bluewood;
+    font-size: $responsive-20px-36px;
+    font-weight: $fw-medium;
+    line-height: $responsive-24px-43px;
+    margin-bottom: $responsive-24px-40px;
+    transition: color 0.3s;
+  }
+
+  &__progress-container {
+    height: 1.6rem;
+    padding: 0.4rem;
+    width: 100%;
+    border-radius: 99.9rem;
+    background: $color-white;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  &__progress {
+    width: 100%;
+    height: 0.8rem;
+    border: none;
+
+    &::-webkit-progress-bar {
+      background: transparent;
+    }
+
+    &::-webkit-progress-value {
+      background: $color-electric-purple;
+      border-radius: 10.4rem;
+    }
+  }
+
+  &__options-submit-error {
+    display: flex;
+    flex-direction: column;
+    gap: $responsive-12px-32px;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: $responsive-12px-24px;
+  }
+
+  &-completed-btn {
+    height: $responsive-56px-92px;
+    padding: $responsive-12px-32px;
+    border-radius: $responsive-12px-24px;
+    background: $color-electric-purple;
+    box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+    border: none;
+    color: $color-white;
+    font-family: $font-rubik;
+    font-size: $responsive-18px-28px;
+    font-weight: $fw-medium;
+    transition: box-shadow 0.3s;
+
+    &:focus-visible {
+      outline: 0.2rem solid $color-pickled-bluewood;
+      outline-offset: -0.1rem;
+    }
+
+    &.white-outline-btn {
+      &:focus-visible {
+        outline: 0.2rem solid $color-white;
+        outline-offset: -0.1rem;
+      }
+    }
+  }
+
+  &__error-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    align-self: start;
+    margin: 0 auto;
+  }
+
+  &__error-icon {
+    @include correct-error-styles;
+  }
+
+  &__error-text {
+    color: $color-valentine-red;
+    font-size: $responsive-18px-24px;
+    line-height: $responsive-18px-36px;
+    transition: color 0.3s;
+  }
+}
+
+// ************ OPTION ************
+.option {
+  @include subject-option-styles;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.3rem solid transparent;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  &:focus-visible {
+    outline: 0.2rem solid $color-electric-purple;
+  }
+
+  &__letter-text {
+    display: flex;
+    align-items: center;
+    gap: $responsive-16px-32px;
+  }
+
+  &__letter {
+    @include icon-letter-styles;
+    background: $color-white-smoke;
+    color: $color-jet-grey;
+    font-size: $responsive-18px-28px;
+    font-weight: $fw-medium;
+    flex-shrink: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  &__text {
+    color: $color-pickled-bluewood;
+    font-size: $responsive-18px-28px;
+    font-weight: $fw-medium;
+    transition: color 0.3s;
+  }
+
+  &__correct-error {
+    @include correct-error-styles;
+    flex-shrink: 0;
+    margin-left: 1.2rem;
+  }
+}
+
+// *********** COMPLETED ***********
+.completed {
+  display: flex;
+  flex-direction: column;
+  gap: $responsive-40px-64px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: $color-pickled-bluewood;
+    font-size: $responsive-40px-64px;
+    font-weight: $fw-light;
+    transition: color 0.3s;
+
+    &--medium-bold {
+      font-weight: $fw-medium;
+    }
+  }
+
+  &__card-btn {
+    display: flex;
+    flex-direction: column;
+    gap: $responsive-12px-32px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    border-radius: $responsive-12px-24px;
+    background: $color-white;
+    box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+    padding: $responsive-32px-48px;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    & .subject {
+      gap: $responsive-16px-24px;
+      margin-bottom: $responsive-0px-24px;
+    }
+  }
+
+  &__score {
+    color: $color-pickled-bluewood;
+    font-size: $responsive-88px-144px;
+    font-weight: $fw-medium;
+    transition: color 0.3s;
+  }
+
+  &__questions {
+    color: $color-jet-grey;
+    font-size: $responsive-18px-24px;
+    line-height: $responsive-18px-36px;
+  }
+}
+
+// ******* 320px - 374px LAYOUT *******
+@media only screen and (max-width: 23.4375em) {
+  // ************ GREETING ************
+  .greeting {
+    &__text {
+      font-size: 3.8rem;
+    }
+  }
+
+  // ************** OPTION *************
+  .option {
+    &__text {
+      font-size: 1.6rem;
+    }
+
+    &__correct-error {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  // ************ COMPLETED ***********
+  .completed {
+    &__header {
+      font-size: 3.8rem;
+    }
+  }
+}

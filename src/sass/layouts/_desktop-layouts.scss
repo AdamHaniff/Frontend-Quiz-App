@@ -1,0 +1,96 @@
+// ********** DESKTOP LAYOUTS **********
+
+// *********** 1440px LAYOUT ***********
+@media only screen and (min-width: 90em) {
+  body {
+    background-image: url(../../public/images/pattern-background-desktop-light.svg);
+    background-position-x: initial;
+  }
+
+  .dark-pattern-bg {
+    background-image: url(../../public/images/pattern-background-desktop-dark.svg);
+  }
+
+  #root {
+    max-width: 116rem;
+  }
+
+  // *************** APP **************
+  .app {
+    gap: 9.9rem;
+  }
+
+  // ************* HEADER *************
+  .header {
+    margin-bottom: initial;
+  }
+
+  // ************* SUBJECT ************
+  .subject {
+    &__container {
+      padding: 2rem;
+    }
+  }
+
+  // *********** START-MENU ***********
+  .start-menu {
+    flex-direction: row;
+    gap: initial;
+
+    > * {
+      flex: 1;
+    }
+
+    &__subjects {
+      max-width: 56.4rem;
+    }
+  }
+
+  // ************ GREETING ************
+  .greeting {
+    gap: 4.8rem;
+  }
+
+  // ************* QUESTION ************
+  .question {
+    flex-direction: row;
+    gap: initial;
+    justify-content: space-between;
+
+    > * {
+      flex: 1;
+    }
+
+    &__number-text-progress {
+      max-width: 46.5rem;
+    }
+
+    &__text {
+      margin-bottom: 16.4rem;
+    }
+
+    &__options-submit-error {
+      max-width: 56.4rem;
+    }
+  }
+
+  // ************* OPTION *************
+  .option {
+    padding: 1.8rem 2rem;
+
+    &__correct-error {
+      margin-left: 2rem;
+    }
+  }
+
+  // ************ COMPLETED ************
+  .completed {
+    flex-direction: row;
+    gap: initial;
+    justify-content: space-between;
+
+    &__card-btn {
+      width: 56.4rem;
+    }
+  }
+}

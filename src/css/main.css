@@ -488,6 +488,10 @@ body {
     background: #f6e7ff;
     color: #a729f5;
   }
+  .option:hover.purple-border .option__letter-text .option__letter {
+    background: #a729f5;
+    color: #fff;
+  }
 }
 .purple-border {
   border: 0.3rem solid #a729f5;

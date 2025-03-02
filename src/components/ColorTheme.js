@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "./App";
-import { handleKeyPress } from "./helpers";
+import { handleKeyPress } from "../js/helpers";
 
 function ColorTheme({ dispatch }) {
   // VARIABLES

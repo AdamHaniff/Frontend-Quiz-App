@@ -1,0 +1,187 @@
+// ********* DESIGN SYSTEM *********
+
+// ************ COLORS ************
+$color-white-smoke: #f4f6fa;
+$color-jet-grey: #626c7f;
+$color-electric-purple: #a729f5;
+$color-white: #fff;
+$color-pickled-bluewood: #313e51;
+$color-forget-me-not: #fff1e9;
+$color-frosted-mint: #e0fdef;
+$color-titan-white: #ebf0ff;
+$color-blue-chalk: #f6e7ff;
+$color-tealish-green: #26d782;
+$color-valentine-red: #ee5454;
+$color-cloudy-blue: #abc1e1;
+$color-river-bed: #3b4d66;
+$color-tyrian-purple: #bd55ff;
+
+// ********** FONT-FAMILY **********
+$font-rubik: "Rubik", serif;
+
+// ********* FONT-WEIGHTS *********
+$fw-light: 300;
+$fw-medium: 500;
+
+// ************* VARIABLES ************
+$responsive-0px-24px: clamp(
+  0rem,
+  calc(0rem + (24 - 0) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-6px-12px: clamp(
+  0.6rem,
+  calc(0.6rem + (12 - 6) * ((100vw - 37.5rem) / (768 - 375))),
+  1.2rem
+);
+
+$responsive-8px-16px: clamp(
+  0.8rem,
+  calc(0.8rem + (16 - 8) * ((100vw - 37.5rem) / (768 - 375))),
+  1.6rem
+);
+
+$responsive-12px-24px: clamp(
+  1.2rem,
+  calc(1.2rem + (24 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-12px-27px: clamp(
+  1.2rem,
+  calc(1.2rem + (27 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  2.7rem
+);
+
+$responsive-12px-32px: clamp(
+  1.2rem,
+  calc(1.2rem + (32 - 12) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
+$responsive-14px-20px: clamp(
+  1.4rem,
+  calc(1.4rem + (20 - 14) * ((100vw - 37.5rem) / (768 - 375))),
+  2rem
+);
+
+$responsive-16px-24px: clamp(
+  1.6rem,
+  calc(1.6rem + (24 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-16px-32px: clamp(
+  1.6rem,
+  calc(1.6rem + (32 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
+$responsive-16px-54px: clamp(
+  1.6rem,
+  calc(1.6rem + (54 - 16) * ((100vw - 37.5rem) / (768 - 375))),
+  5.4rem
+);
+
+$responsive-18px-24px: clamp(
+  1.8rem,
+  calc(1.8rem + (24 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  2.4rem
+);
+
+$responsive-18px-28px: clamp(
+  1.8rem,
+  calc(1.8rem + (28 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  2.8rem
+);
+
+$responsive-18px-36px: clamp(
+  1.8rem,
+  calc(1.8rem + (36 - 18) * ((100vw - 37.5rem) / (768 - 375))),
+  3.6rem
+);
+
+$responsive-20px-36px: clamp(
+  2rem,
+  calc(2rem + (36 - 20) * ((100vw - 37.5rem) / (768 - 375))),
+  3.6rem
+);
+
+$responsive-21px-30px: clamp(
+  2.1rem,
+  calc(2.1rem + (30 - 21) * ((100vw - 37.5rem) / (768 - 375))),
+  3rem
+);
+
+$responsive-24px-40px: clamp(
+  2.4rem,
+  calc(2.4rem + (40 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-24px-43px: clamp(
+  2.4rem,
+  calc(2.4rem + (43.2 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  4.32rem
+);
+
+$responsive-24px-64px: clamp(
+  2.4rem,
+  calc(2.4rem + (64 - 24) * ((100vw - 37.5rem) / (768 - 375))),
+  6.4rem
+);
+
+$responsive-28px-40px: clamp(
+  2.8rem,
+  calc(2.8rem + (40 - 28) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-32px-9px: clamp(
+  0.9rem,
+  calc(3.2rem - (32 - 9) * ((100vw - 37.5rem) / (768 - 375))),
+  3.2rem
+);
+
+$responsive-32px-40px: clamp(
+  3.2rem,
+  calc(3.2rem + (40 - 32) * ((100vw - 37.5rem) / (768 - 375))),
+  4rem
+);
+
+$responsive-32px-48px: clamp(
+  3.2rem,
+  calc(3.2rem + (48 - 32) * ((100vw - 37.5rem) / (768 - 375))),
+  4.8rem
+);
+
+$responsive-40px-56px: clamp(
+  4rem,
+  calc(4rem + (56 - 40) * ((100vw - 37.5rem) / (768 - 375))),
+  5.6rem
+);
+
+$responsive-40px-64px: clamp(
+  4rem,
+  calc(4rem + (64 - 40) * ((100vw - 37.5rem) / (768 - 375))),
+  6.4rem
+);
+
+$responsive-56px-92px: clamp(
+  5.6rem,
+  calc(5.6rem + (92 - 56) * ((100vw - 37.5rem) / (768 - 375))),
+  9.2rem
+);
+
+$responsive-64px-97px: clamp(
+  6.4rem,
+  calc(6.4rem + (97 - 64) * ((100vw - 76.8rem) / (1440 - 768))),
+  9.7rem
+);
+
+$responsive-88px-144px: clamp(
+  8.8rem,
+  calc(8.8rem + (144 - 88) * ((100vw - 37.5rem) / (768 - 375))),
+  14.4rem
+);

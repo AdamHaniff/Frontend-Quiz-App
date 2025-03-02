@@ -1,0 +1,39 @@
+// ********** TABLET LAYOUTS ***********
+
+// ************ 768px LAYOUT ***********
+@media only screen and (min-width: 48em) {
+  body {
+    background-image: url(../../public/images/pattern-background-tablet-light.svg);
+    background-position-x: -24.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $responsive-64px-97px;
+  }
+
+  .dark-pattern-bg {
+    background-image: url(../../public/images/pattern-background-tablet-dark.svg);
+  }
+
+  #root {
+    flex: 1;
+    max-width: 64.02rem;
+  }
+
+  // ************** THEME **************
+  .theme {
+    &__slider-container {
+      width: 4.8rem;
+      height: 2.8rem;
+    }
+
+    &__slider {
+      width: 2rem;
+      height: 2rem;
+
+      &--translate {
+        transform: translateX(2rem);
+      }
+    }
+  }
+}

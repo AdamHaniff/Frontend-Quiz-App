@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import data from "./data/data";
+import data from "../data/data";
 import Subject from "./Subject";
 import { ThemeContext } from "./App";
-import { handleKeyPress } from "./helpers";
+import { handleKeyPress } from "../js/helpers";
 
 function StartMenu({ dispatch }) {
   // VARIABLES

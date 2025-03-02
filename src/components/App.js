@@ -10,7 +10,6 @@ const initialState = {
   subject: null,
   index: 0,
   score: 0,
-  userAnswer: null,
   isLightTheme: true,
 };
 
@@ -27,7 +26,6 @@ function reducer(state, action) {
       const answer = state.subject.questions[state.index].answer;
       return {
         ...state,
-        userAnswer: action.payload,
         score: action.payload === answer ? state.score + 1 : state.score,
       };
 
@@ -35,14 +33,12 @@ function reducer(state, action) {
       return {
         ...state,
         index: state.index + 1,
-        userAnswer: null,
       };
 
     case "quizCompleted":
       return {
         ...state,
         status: "completed",
-        userAnswer: null,
       };
 
     case "playAgain":
